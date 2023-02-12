@@ -1,0 +1,98 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  background:  #009579;
+}
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.container .form{
+  padding: 2rem;
+}
+.login header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .login input{
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+ }
+
+ a{
+  font-size: 16px;
+  color: #009579;
+  text-decoration: none;
+}
+ a:hover{
+  text-decoration: underline;
+}
+.button{
+    color: #fff;
+    background: #009579;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 1.7rem;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #163b19;
+}
+
+  
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  color: #009579;
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}
+
+.error{
+  background: #e9d9d9;
+  color:#A94442;
+  padding:2px;
+  width:95%;
+  position: relative;
+  bottom: 1rem;
+}
+
+.sucess{
+  background: #08eb26;
+  color:#000000;
+  padding:2px;
+  width:95%;
+  position: relative;
+  bottom: 1rem;
+}
+
+
