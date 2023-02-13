@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_SESSION["username"]))
 {
-    if((time() - $_SESSION['last_time']) >240)
+    if((time() - $_SESSION['last_time']) >60)
 
 {
   
@@ -21,7 +21,7 @@ if(isset($_SESSION["username"]))
          
     <div id="ten-countdown"></div>
     
-    <script src="js/index.js"></script>
+    <script src="js/indexs.js"></script>
     
     
     </div> <?php

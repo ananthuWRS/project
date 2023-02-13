@@ -4,7 +4,7 @@ function countdown( elementName, minutes, seconds )
 
     function twoDigits( n )
     {
-        return (n <= 9 ? "0" + n : n);
+        return (n <= 1 ? "0" + n : n);
     }
 
     function updateTimer()
@@ -26,4 +26,4 @@ function countdown( elementName, minutes, seconds )
     updateTimer();
 }
 
-countdown( "ten-countdown", 10, 0 );
+countdown( "ten-countdown", 1, 0 );

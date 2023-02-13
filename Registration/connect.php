@@ -18,10 +18,10 @@
      $password          =($_POST['pass']);
      $confirm   =($_POST['confirm']);
     // $hash =password_hash($password,PASSWORD_DEFAULT);
-      $uppercase = preg_match('@[A-Z]@',$_SESSION['password']);
-      $lowercase = preg_match('@[a-z]@', $_SESSION['password']);
-      $number    = preg_match('@[0-9]@', $_SESSION['password']);
-      $specialChars = preg_match('@[^\w]@', $_SESSION['password']);
+      $uppercase = preg_match('@[A-Z]@',$password);
+      $lowercase = preg_match('@[a-z]@', $password);
+      $number    = preg_match('@[0-9]@', $password);
+      $specialChars = preg_match('@[^\w]@', $password);
       $numbers     =preg_match('/^[0-9]{10}+$/',   $_SESSION['number'] );
  
      
@@ -41,7 +41,7 @@
    }
  
    
-   elseif(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($_SESSION['password']) < 8){
+   elseif(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8){
         header("Location:Registration.php ? error=Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");
 
       }
@@ -57,8 +57,16 @@
    elseif($row['success'] != "true"){
     header("Location:Registration.php ? error=You are a Robot");
    }
-      
-  
+   $user = $_SESSION['user'];
+   $sql = "select * from users where user = ?";
+   $stmtinsert = $conn->prepare($sql);
+  $stmtinsert->execute([$user]);
+  $result=$stmtinsert->rowCount();
+  if($result>0){
+    header("Location:Registration.php ? error=username is already exist");
+  }
+
+}
    
       
      else{
@@ -84,7 +92,7 @@
         header("Location:Registration.php ? error=password is not match");
       } 
     }
-  }
+  
     
     
     ?>
